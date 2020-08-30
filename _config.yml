@@ -1,90 +1,114 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-title: su
-name: su
-email: l95475967@163.com
-location: Fujian, China
-company: Xidian University
-company_url: http://www.xidian.edu.cn/
-github_url: https://github.com/dar1in9
-description: This is a personal website of su | 个人博客，用于记录学习笔记
-favicon: favicon.png
-repository: dar1in9/dar1in9.github.io
+title: ctZmx Blog
+SEOTitle: ctZmx的博客 | ~~
+header-img: img/1 (218).jpg
+email: ctzmx05@gmail.com
+description: "GKD GDK GKD"
+keyword: "犹豫，就会白给 "
+url: "http://ctzmx.github.io"          # your host, for absolute URL
+baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+#github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code repository
 
-# The base hostname & protocol for your site
-# For local test, please use http://localhost:4000
-# For production, use your github page url. ex. http://dongchuan.github.io
-url: https://dar1in9.github.io/
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "Goals determine what you going to be!"
+sidebar-avatar: /img/微信图片_20190102233934.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
 
-## Gem
-gems:
-  - jekyll-paginate
-  - jekyll-geo-pattern
-  - rouge
-  - kramdown
-  - jekyll-github-metadata
+
+
+# SNS settings
+RSS: false
+# weibo_username:     qiubaiying
+#zhihu_username:     qiubaiying
+#github_username:    qiubaiying
+#facebook_username:  baiying.qiu.7
+#jianshu_username:   e71990ada2fd
+#twitter_username:   qiubaiying
+
+
+
 
 # Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
+
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 highlighter: rouge
-lsi:         false
-excerpt_separator: "\n\n"
-
-source:      .
-destination: ./_site
-
-quiet:    false
-defaults: []
-
 kramdown:
-  input: GFM
-  enable_coderay: true
+  input: GFM                            # use Github Flavored Markdown !important
 
-# Disque
-disque: dar1in9.disqus.com
 
-# Pagination
-paginate: 10
-paginate_path: 'page:num'
 
-# Navigation. If you do not like these modules, just remove them :D
-navs:
-  -
-    href: /
-    label: Home
+# 评论系统
+# Disqus（https://disqus.com/）
+# disqus_username: ct-zmx
 
-  -
-    href: /open-source
-    label: Open-Source
+# Gitalk
+gitalk:
+  enable: true    #是否开启Gitalk评论
+  clientID: f2c84e7629bb1446c1a4                            #生成的clientID
+  clientSecret: ca6d6139d1e1b8c43f8b2e19492ddcac8b322d0d    #生成的clientSecret
+  repo: qiubaiying.github.io    #仓库名称
+  owner: qiubaiying    #github用户名
+  admin: qiubaiying
+  distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
-  -
-    href: /blog
-    label: Blog
 
-  -
-    href: /bookmark
-    label: Bookmark
+# 统计
 
-  -
-    href: /about
-    label: About
-
-# Sidebar to show popular repo
-side_bar_repo_limit: 5 # Number of repos to show
+# Analytics settings
+# Baidu Analytics
+#ba_track_id: b50bf2b12b5338a1845e33832976fd68
 
 # Google Analytics
-analytics :
-  provider : google
-  google :
-      tracking_id : 'tracking_id'  # ex. UA-72165600-X
+#ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+#ga_domain: qiubaiying.top               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
-# For about.html. Fell free to create your own!
-skill_software_keywords: [C, Python, Git, Linux Shell]
 
+
+
+# Featured Tags
+featured-tags: true                     # 是否使用首页标签
+featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+
+# Friends
+#friends: [
+#    {
+#        title: "WY",
+#        href: "http://zhengwuyang.com"
+#    },{
+#        title: "简书·BY",
+#        href: "http://www.jianshu.com/u/e71990ada2fd"
+#    },{
+#        title: "Apple",
+#        href: "https://apple.com"
+#    },{
+#        title: "Apple Developer",
+#        href: "https://developer.apple.com/"
+#    }
+#]
